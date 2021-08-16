@@ -1,32 +1,33 @@
 import { createContext, ReactNode, useState } from 'react'
-import { ThemeProvider as SCThemeProvider, DefaultTheme } from 'styled-components'
+import {
+  ThemeProvider as SCThemeProvider,
+  DefaultTheme,
+} from 'styled-components'
 
 import Light from '@/styles/themes/light'
 import Dark from '@/styles/themes/dark'
 
 interface ThemeContextData {
-    theme: any
-    toggleTheme: () => void
+  theme: any
+  toggleTheme: () => void
 }
 
 interface Props {
-    children: ReactNode
+  children: ReactNode
 }
 
 export const ThemeContext = createContext({} as ThemeContextData)
 
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<DefaultTheme>(Dark)
+  const [theme, setTheme] = useState<DefaultTheme>(Light)
 
-  function toggleTheme () {
+  function toggleTheme() {
     setTheme(theme.title === 'light' ? Dark : Light)
   }
 
   return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            <SCThemeProvider theme={theme}>
-                {children}
-            </SCThemeProvider>
-        </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <SCThemeProvider theme={theme}>{children}</SCThemeProvider>
+    </ThemeContext.Provider>
   )
 }

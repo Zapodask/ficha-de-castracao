@@ -6,9 +6,9 @@ import GlobalStyle from '@/styles/global'
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
 
-        <GlobalStyle />
+      <GlobalStyle />
     </ThemeProvider>
   )
 }
