@@ -39,9 +39,25 @@ export const toPdf = async (data: Props) => {
   // Image
   if (data.image) {
     const image = await data.image.arrayBuffer()
-    const embedImage = await pdfDoc.embedJpg(image)
     const imageButton = form.getButton('Button1')
-    imageButton.setImage(embedImage)
+
+    switch (data.image.type) {
+      case 'image/jpeg': {
+        const embedImage = await pdfDoc.embedJpg(image)
+
+        imageButton.setImage(embedImage)
+        break
+      }
+      case 'image/png': {
+        const embedImage = await pdfDoc.embedPng(image)
+
+        imageButton.setImage(embedImage)
+        break
+      }
+      default: {
+        null
+      }
+    }
   }
 
   // Animal

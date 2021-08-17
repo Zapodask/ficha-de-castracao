@@ -4,7 +4,7 @@ Nextjs + Pdflib fill pdf form
 
 ## Installation
 
-Use [yarn] (https://classic.yarnpkg.com/en/docs/install/) to install packages
+Use [yarn](https://classic.yarnpkg.com/en/docs/install/) to install packages
 
 ```bash
 yarn install

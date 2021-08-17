@@ -48,11 +48,6 @@ export const Container = styled.div`
 
         margin: 0 auto;
         border: 1px solid #555;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
       }
     }
 

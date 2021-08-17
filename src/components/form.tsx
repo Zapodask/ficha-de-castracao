@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form'
 import InputMask from 'react-input-mask'
+import Image from 'next/image'
 
 import { Container } from '@/styles/components/form'
 import { toPdf } from '@/services/toPdf'
@@ -101,7 +102,12 @@ export const Form = () => {
 
           {preview && (
             <div className="preview">
-              <img src={preview} />
+              <Image
+                src={preview as any}
+                layout="responsive"
+                width={300}
+                height={300}
+              />
             </div>
           )}
         </div>
