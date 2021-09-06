@@ -102,7 +102,7 @@ export const toPdf = async (data: Props) => {
   Birthday.setText(data.person.birthday)
 
   const Rg = form.getTextField('Text18')
-  Rg.setText(JSON.stringify(data.person.rg))
+  Rg.setText(data.person.rg)
 
   const Cpf = form.getTextField('Text19')
   Cpf.setText(data.person.cpf)
@@ -111,7 +111,7 @@ export const toPdf = async (data: Props) => {
   Address.setText(data.person.address)
 
   const Number = form.getTextField('Text21')
-  Number.setText(JSON.stringify(data.person.number))
+  Number.setText(data.person.number)
 
   const Neighborhood = form.getTextField('Text22')
   Neighborhood.setText(data.person.neighborhood)
